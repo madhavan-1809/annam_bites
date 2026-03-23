@@ -1,0 +1,275 @@
+/* ===============================
+   GLOBAL DESIGN SYSTEM
+   Maintains consistency across UI
+   =============================== */
+
+:root {
+
+  /* ===============================
+     FONT FAMILY
+     =============================== */
+
+  /* Main UI font */
+  --font-primary: 'Poppins', sans-serif;
+
+  /* Alternative heading font */
+  --font-heading: 'Poppins', sans-serif;
+
+
+  /* ===============================
+     FONT SIZES
+     Consistent text scaling
+     =============================== */
+
+  --text-xs: 12px;   /* Small labels */
+  --text-sm: 14px;   /* Secondary text */
+  --text-md: 16px;   /* Default body text */
+  --text-lg: 18px;   /* Important paragraph */
+  --text-xl: 20px;   /* Section titles */
+  --text-2xl: 24px;  /* Page headings */
+  --text-3xl: 32px;  /* Main headings */
+  --text-4xl: 40px;  /* Hero titles */
+
+
+  /* ===============================
+     FONT WEIGHTS
+     =============================== */
+
+  --weight-light: 300;
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+
+  /* ===============================
+     TEXT COLORS
+     =============================== */
+
+  --color-text-primary: #0B6F73;
+  --color-text-secondary: #4B5563;
+  --color-text-muted: #6B7280;
+
+  /* Brand color */
+  --color-brand: #13B3B9;
+
+  /* Accent color */
+  --color-accent: #FF6B5E;
+
+
+  /* ===============================
+     LINE HEIGHT
+     Improves readability
+     =============================== */
+
+  --line-tight: 1.2;
+  --line-normal: 1.5;
+  --line-relaxed: 1.7;
+
+
+  /* ===============================
+     LETTER SPACING
+     =============================== */
+
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.04em;
+
+}
+
+
+/* ===============================
+   HEADING STYLES
+   =============================== */
+
+h1 {
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-primary);
+  line-height: var(--line-tight);
+}
+
+h2 {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-semibold);
+}
+
+h3 {
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-semibold);
+}
+
+/* ===============================
+   BODY TEXT
+   =============================== */
+
+p {
+  font-family: var(--font-primary);
+  font-size: var(--text-md);
+  font-weight: var(--weight-normal);
+  color: var(--color-text-secondary);
+  line-height: var(--line-normal);
+}
+
+/* ===============================
+   SMALL TEXT
+   =============================== */
+
+small {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* ===============================
+   BUTTON STYLE
+   =============================== */
+
+.button-primary {
+  font-family: var(--font-primary);
+  font-size: var(--text-md);
+  font-weight: var(--weight-medium);
+  background-color: var(--color-brand);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 6px;
+  letter-spacing: var(--tracking-wide);
+}
+
+/* GLOBAL */
+
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  background: #EAF7F8;
+  color: #1f2937;
+}
+
+/* NAVBAR */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: #13B3B9;
+  color: white;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  font-weight: 500;
+}
+
+.menu li {
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: white;
+  color: #13B3B9;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(rgba(19, 179, 185, 0.9),
+      rgba(19, 179, 185, 0.9));
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.btn-accent {
+  background: #FF6B5E;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+}
+
+/* PRODUCTS */
+
+.products {
+  padding: 80px 80px;
+  text-align: center;
+}
+
+.products h2 {
+  font-size: 32px;
+  color: #13B3B9;
+}
+
+.product-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.image-placeholder {
+  height: 150px;
+  background: #EAF7F8;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.btn-cart {
+  margin-top: 10px;
+  background: #13B3B9;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* FOOTER */
+
+.footer {
+  margin-top: 80px;
+  background: #13B3B9;
+  color: white;
+  text-align: center;
+  padding: 40px;
+}
