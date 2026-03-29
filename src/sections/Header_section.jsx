@@ -57,7 +57,6 @@ import location_icon from "../assets/location_img.svg";
 import facebook from "../assets/fb_img.svg";
 import instagram from "../assets/insta_img.svg";
 import Youtube from "../assets/yt_img.svg";
-import "../styles/social_header_style.css";
 
 function Header() {
   return (
