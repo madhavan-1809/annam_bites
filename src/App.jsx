@@ -17,7 +17,7 @@ import DeliverySection from "./sections/DeliverySection.jsx";
 function App() {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <MainHeader />
       <div className="main-body">
         <HeroSection />
