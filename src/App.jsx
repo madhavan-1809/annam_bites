@@ -13,6 +13,8 @@ import ProductSection from "./sections/Product_section.jsx";
 import PromotionSection from "./sections/Promotion_section.jsx";
 import ReviewSection from "./sections/ReviewSection.jsx";
 import DeliverySection from "./sections/DeliverySection.jsx";
+import FooterSection from "./sections/footerSection.jsx";
+import HeritageSection from "./sections/Heritage.jsx";
 
 function App() {
   return (
@@ -24,9 +26,11 @@ function App() {
         <OurStorySection />
         <TrustSection />
         <ProductSection />
+        <HeritageSection />
         <PromotionSection />
         <ReviewSection />
         <DeliverySection />
+        <FooterSection />
       </div>
     </>
   );

@@ -28,6 +28,7 @@ function MainHeader() {
 
   return (
     <div ref={menuRef}>
+      <div className="top_glow_line" />
       <section className="header">
         {/* LEFT: Logo + Desktop Nav */}
         <div className="main-header-left">

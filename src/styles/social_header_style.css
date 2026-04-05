@@ -26,6 +26,7 @@ li {
 a {
     text-decoration: none;
 }
+
 .heart_icon {
     font-size: 0.85em;
     vertical-align: middle;
@@ -190,6 +191,35 @@ a {
 /* ═══════════════════════════════
    MAIN HEADER
 ═══════════════════════════════ */
+
+.top_glow_line {
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg,
+            transparent 0%, transparent 10%,
+            var(--accent) 30%, var(--primary) 50%,
+            var(--accent) 70%,
+            transparent 90%, transparent 100%);
+    background-size: 300% 100%;
+    animation: sweep 2.5s ease-in-out infinite;
+    filter: blur(0.5px);
+    position: relative;
+    z-index: 999;
+}
+
+.top_glow_line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 10px;
+    background: inherit;
+    background-size: 300% 100%;
+    animation: sweep 2.5s ease-in-out infinite;
+    filter: blur(7px);
+    opacity: 0.65;
+}
+
 .header {
     display: flex;
     align-items: center;
@@ -281,7 +311,7 @@ a {
     position: relative;
     display: flex;
     justify-content: center;
-        /* center everything */
+    /* center everything */
     align-items: center;
     gap: 8px;
     padding: 0 16px;
@@ -431,6 +461,7 @@ a {
 
 .mobile-nav.open {
     max-height: 400px;
+    z-index: 99;
     padding: 0.5rem 0;
 }
 
@@ -619,7 +650,7 @@ a {
 ================================
 */
 
-.main-body{
+.main-body {
     background: #f5f5f5;
     padding: 2rem;
 }
@@ -628,16 +659,34 @@ a {
    HERO SECTION
 ═══════════════════════════════════════ */
 .hero-section {
+    width: 100%;
+    background-image: url('../assets/final_hero_section.png');
+    background-position: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 4rem 4rem 4rem 4rem;
-    background: #f5f5f5;
+    /* background: #f5f5f5; */
     /* background: #fdf8f3; */
     min-height: calc(100vh - 118px);
     gap: 3rem;
     overflow: hidden;
     position: relative;
+    border-radius: 1rem;
+    position: relative;
+
+}
+.hero-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+            rgba(0, 0, 0, 0.45) 0%,
+            rgba(0, 0, 0, 0.15) 50%,
+            rgba(0, 0, 0, 0.05) 100%);
+    z-index: 0;
 }
 
 /* Background blobs */
@@ -666,7 +715,7 @@ a {
     left: 40px;
 }
 
-/* ── LEFT ── */
+/* ── LEFT — glass card wrapping all left content ── */
 .hero-left {
     flex: 1;
     display: flex;
@@ -675,27 +724,40 @@ a {
     max-width: 500px;
     position: relative;
     z-index: 1;
+
+    /* Glass effect */
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
-/* Tag */
+/* ── Tag pill — lighter glass on dark bg ── */
 .hero-tag {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     padding: 5px 14px;
     border-radius: 999px;
-    border: 1px solid rgba(19, 179, 185, 0.3);
-    background: rgba(19, 179, 185, 0.06);
+    border: 1px solid rgba(19, 179, 185, 0.5);
+    background: rgba(19, 179, 185, 0.15);
+    backdrop-filter: blur(8px);
     width: fit-content;
 }
 
 .hero-tag span {
-    font-family: 'DM Sans', sans-serif;
+    color: #7ee8ec;
+    /* lighter teal — visible on dark */
     font-size: 11px;
     font-weight: 600;
-    color: #0e8f94;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+    font-family: 'DM Sans', sans-serif;
 }
 
 .hero-tag-dot {
@@ -721,40 +783,45 @@ a {
     }
 }
 
-/* Title */
+/* ── Title — white on dark background ── */
 .hero-title {
     font-family: 'DM Sans', sans-serif;
     font-size: clamp(2rem, 3.5vw, 3.2rem);
     font-weight: 700;
-    color: #1a1a1a;
+    color: #ffffff;
+    /* white over dark overlay */
     line-height: 1.2;
     margin: 0;
     letter-spacing: -0.02em;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
 }
 
 .hero-accent {
     color: var(--primary);
+    text-shadow: 0 0 20px rgba(19, 179, 185, 0.4);
 }
 
-/* Description */
+/* ── Description — off-white ── */
 .hero-desc {
     font-family: 'DM Sans', sans-serif;
     font-size: 15px;
-    color: #777;
+    color: rgba(255, 255, 255, 0.8);
     line-height: 1.85;
     margin: 0;
 }
 
-/* Stats */
+/* ── Stats card — glass ── */
 .hero-stats {
     display: flex;
     align-items: center;
     gap: 1.5rem;
     padding: 1rem 1.5rem;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-radius: 14px;
-    border: 1px solid rgba(0, 0, 0, 0.06);
-    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
     width: fit-content;
 }
 
@@ -769,14 +836,14 @@ a {
     font-family: 'DM Sans', sans-serif;
     font-size: 20px;
     font-weight: 700;
-    color: var(--primary);
+    color: #fff;
     line-height: 1;
 }
 
 .hero-stat-label {
     font-family: 'DM Sans', sans-serif;
     font-size: 10px;
-    color: #aaa;
+    color: rgba(255, 255, 255, 0.6);
     letter-spacing: 0.05em;
     text-transform: uppercase;
     white-space: nowrap;
@@ -785,7 +852,7 @@ a {
 .hero-divider {
     width: 1px;
     height: 28px;
-    background: rgba(0, 0, 0, 0.07);
+    background: rgba(255, 255, 255, 0.2);
     flex-shrink: 0;
 }
 
@@ -796,6 +863,7 @@ a {
     align-items: center;
 }
 
+/* ── Primary button — solid teal ── */
 .hero-btn-primary {
     display: flex;
     align-items: center;
@@ -803,42 +871,45 @@ a {
     height: 48px;
     border-radius: 12px;
     background: var(--primary);
-    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     font-family: 'DM Sans', sans-serif;
     font-size: 14px;
     font-weight: 600;
     color: #fff;
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
-    box-shadow: 0 4px 16px rgba(19, 179, 185, 0.3);
+    box-shadow: 0 4px 20px rgba(19, 179, 185, 0.45);
     letter-spacing: 0.01em;
 }
 
 .hero-btn-primary:hover {
     background: #0fa0a6;
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(19, 179, 185, 0.4);
+    box-shadow: 0 8px 28px rgba(19, 179, 185, 0.55);
 }
 
+/* ── Secondary button — glass ── */
 .hero-btn-secondary {
     display: flex;
     align-items: center;
     padding: 0 26px;
     height: 48px;
     border-radius: 12px;
-    background: transparent;
-    border: 1.5px solid rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     font-family: 'DM Sans', sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: #555;
+    color: rgba(255, 255, 255, 0.9);
     cursor: pointer;
-    transition: border-color 0.2s, color 0.2s, transform 0.2s;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
 }
 
 .hero-btn-secondary:hover {
-    border-color: var(--primary);
-    color: var(--primary);
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.4);
     transform: translateY(-2px);
 }
 
@@ -849,10 +920,11 @@ a {
     flex-wrap: wrap;
 }
 
+/* ── Trust row — white text ── */
 .hero-trust-item {
     font-family: 'DM Sans', sans-serif;
     font-size: 12px;
-    color: #aaa;
+    color: rgba(255, 255, 255, 0.7);
     letter-spacing: 0.02em;
     display: flex;
     align-items: center;
@@ -876,23 +948,18 @@ a {
     z-index: 1;
 }
 
-/* Slider */
+/* ── RIGHT — slider glass frame ── */
 .hero-slider {
     width: 100%;
     max-width: 420px;
     height: 400px;
-    /* 🔥 prevents huge scaling */
-    /* height: clamp(320px, 40vw, 520px); */
-    /* 🔥 responsive control */
     border-radius: 20px;
     overflow: hidden;
-    background: #e8ddd0;
     position: relative;
-
+    border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow:
-        0 2px 4px rgba(0, 0, 0, 0.04),
-        0 8px 24px rgba(0, 0, 0, 0.08),
-        0 24px 48px rgba(0, 0, 0, 0.06);
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
 /* Slides */
@@ -1014,7 +1081,7 @@ a {
 /* Center content for large screens */
 @media (min-width: 1400px) {
     .hero-section {
-        max-width: 1300px;
+        /* max-width: 1300px; */
         margin: 0 auto;
     }
 }
@@ -1130,9 +1197,10 @@ a {
         padding: 0 20px;
     }
 
-    .hero-left {
-        gap: 1.25rem;
-    }
+        .hero-left {
+            padding: 1.5rem;
+            border-radius: 18px;
+        }
 }
 
 @media (max-width: 480px) {
@@ -1195,9 +1263,10 @@ a {
         font-size: 13px;
     }
 
-    .hero-left {
-        gap: 1.1rem;
-    }
+        .hero-left {
+            padding: 1.25rem;
+            border-radius: 16px;
+        }
 }
 
 @media (max-width: 360px) {

@@ -160,7 +160,7 @@
 
 // export default HeroSection;
 
-import { useState, useEffect, useRef } from "react";
+// import { useState, useEffect, useRef } from "react";
 import Product01 from "../assets/product_01.jpeg";
 import Product02 from "../assets/product_02.jpeg";
 import Product03 from "../assets/images03.png";
@@ -168,35 +168,35 @@ import Product04 from "../assets/images04.png";
 import Product05 from "../assets/images05.png";
 import Product06 from "../assets/images06.png";
 
-const slides = [
-  { img: Product04, label: "Spicy Mixture" },
-  { img: Product03, label: "Spicy Mixture" },
-  { img: Product05, label: "Spicy Mixture" },
-  { img: Product01, label: "Homemade Murukku" },
-  { img: Product02, label: "Traditional Sweets" },
-  { img: Product06, label: "Spicy Mixture" },
-];
+// const slides = [
+//   { img: Product04, label: "Spicy Mixture" },
+//   { img: Product03, label: "Spicy Mixture" },
+//   { img: Product05, label: "Spicy Mixture" },
+//   { img: Product01, label: "Homemade Murukku" },
+//   { img: Product02, label: "Traditional Sweets" },
+//   { img: Product06, label: "Spicy Mixture" },
+// ];
 
 function HeroSection() {
-  const [current, setCurrent] = useState(0);
-  const timerRef = useRef(null);
+  // const [current, setCurrent] = useState(0);
+  // const timerRef = useRef(null);
 
-  const startTimer = () => {
-    clearInterval(timerRef.current);
-    timerRef.current = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
-    }, 3500);
-  };
+  // const startTimer = () => {
+  //   clearInterval(timerRef.current);
+  //   timerRef.current = setInterval(() => {
+  //     setCurrent((prev) => (prev + 1) % slides.length);
+  //   }, 3500);
+  // };
 
-  const goTo = (index) => {
-    setCurrent(index);
-    startTimer();
-  };
+  // const goTo = (index) => {
+  //   setCurrent(index);
+  //   startTimer();
+  // };
 
-  useEffect(() => {
-    startTimer();
-    return () => clearInterval(timerRef.current);
-  }, []);
+  // useEffect(() => {
+  //   startTimer();
+  //   return () => clearInterval(timerRef.current);
+  // }, []);
 
   return (
     <section className="hero-section">
@@ -256,7 +256,7 @@ function HeroSection() {
       </div>
 
       {/* RIGHT */}
-      <div className="hero-right">
+      {/* <div className="hero-right">
         <div className="hero-slider">
           {slides.map((slide, i) => (
             <div
@@ -275,7 +275,6 @@ function HeroSection() {
             </div>
           ))}
 
-          {/* Progress bar */}
           <div className="hero-progress">
             {slides.map((_, i) => (
               <button
@@ -287,7 +286,7 @@ function HeroSection() {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }
