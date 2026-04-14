@@ -1,6 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-// import AboutImage from "../assets/annam_about_final_img.png";
-// import ProductImage from "../assets/annam_product_img.jpeg";
 import ProductImage from "../assets/annam_product_img.png";
 import AboutImage from "../assets/annam_about_final_img.png";
 
