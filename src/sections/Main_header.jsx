@@ -82,11 +82,21 @@ function MainHeader() {
         {/* MOBILE NAV */}
         <div className={`mobile-nav ${menuOpen ? "open" : ""}`}>
           <ul className="mobile-nav-list">
-            <li onClick={() => setMenuOpen(false)}>Home</li>
-            <li onClick={() => setMenuOpen(false)}>Our Story</li>
-            <li onClick={() => setMenuOpen(false)}>Snacks</li>
-            <li onClick={() => setMenuOpen(false)}>About</li>
-            <li onClick={() => setMenuOpen(false)}>Contact Us</li>
+            <a href="#">
+              <li onClick={() => setMenuOpen(false)}>Home</li>
+            </a>
+            <a href="#about">
+              <li onClick={() => setMenuOpen(false)}>Our Story</li>
+            </a>
+            <a href="#product-order">
+              <li onClick={() => setMenuOpen(false)}>Snacks</li>
+            </a>
+            {/* <a href="#">
+              <li onClick={() => setMenuOpen(false)}>About</li>
+            </a> */}
+            <a href="#footer">
+              <li onClick={() => setMenuOpen(false)}>Contact Us</li>
+            </a>
           </ul>
         </div>
       </div>
