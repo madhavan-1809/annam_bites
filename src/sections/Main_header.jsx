@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import Logo from "../assets/annam_logo.png";
-import profileIcon from "../assets/profile_icon.svg";
+// import profileIcon from "../assets/profile_icon.svg";
 import CartIcon from "../assets/cart_icon.svg";
 
 function MainHeader() {
@@ -39,26 +39,34 @@ function MainHeader() {
 
             <nav className="nav-wrapper">
               <ul className="nav-list">
-                <li>Home</li>
-                <li>Our Story</li>
-                <li>Snacks</li>
-                <li>About</li>
-                <li>Contact Us</li>
+                <a href="#">
+                  <li>Home</li>
+                </a>
+                <a href="#about">
+                  <li>Our Story</li>
+                </a>
+                <a href="#product-order">
+                  <li>Snacks</li>
+                </a>
+                {/* <li>About</li> */}
+                <a href="#footer">
+                  <li>Contact Us</li>
+                </a>
               </ul>
             </nav>
           </div>
 
           {/* RIGHT */}
           <div className="main-header-right">
-            <button className="action-btn icon-only">
+            {/* <button className="action-btn icon-only">
               <img src={profileIcon} alt="profile" />
-            </button>
+            </button> */}
 
-            <button className="action-btn">
+            <a className="action-btn" href="#product-order">
               <img src={CartIcon} alt="cart" />
               <span>Orders</span>
-              <span className="cart-badge">2</span>
-            </button>
+              {/* <span className="cart-badge">2</span> */}
+            </a>
 
             <button
               className={`hamburger ${menuOpen ? "active" : ""}`}

@@ -120,7 +120,7 @@ function DeliverySection() {
   }, []);
 
   return (
-    <section className="delivery">
+    <section className="delivery" id="process">
       <div className="delivery_header">
         <h2 className="delivery_title">Freshly Made, Promptly Delivered</h2>
         <p className="delivery_subtitle">

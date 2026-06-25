@@ -45,8 +45,12 @@ function HeroSection() {
         </div>
 
         <div className="hero-btns">
-          <button className="hero-btn-primary">Order Now →</button>
-          <button className="hero-btn-secondary">Our Story</button>
+          <a href="#product-order">
+            <button className="hero-btn-primary">Order Now →</button>
+          </a>
+          <a href="#about">
+            <button className="hero-btn-secondary">Our Story</button>
+          </a>
         </div>
 
         <div className="hero-trust">
@@ -61,6 +65,7 @@ function HeroSection() {
           </span>
         </div>
       </div>
+      <div className="hero-right"></div>
     </section>
   );
 }

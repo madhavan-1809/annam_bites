@@ -110,7 +110,7 @@ function HeritageSection() {
         </ul>
 
         {/* Full Story button — ribbon style */}
-        <div className="heritage_btn_wrap">
+        {/* <div className="heritage_btn_wrap">
           <button className="heritage_btn">
             <svg
               viewBox="0 0 24 24"
@@ -132,9 +132,8 @@ function HeritageSection() {
             </svg>
             Full Story
           </button>
-          {/* Ribbon tail */}
           <div className="heritage_btn_ribbon" />
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -2,7 +2,7 @@ import AboutImage from "../assets/annam_about_final_img.png";
 
 function OurStorySection() {
   return (
-    <section className="section_story">
+    <section className="section_story" id="about">
       {/* LEFT — image + quote */}
       <div className="section_story_left">
         <div className="section_story_img_ctn">

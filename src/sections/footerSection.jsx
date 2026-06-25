@@ -3,7 +3,7 @@ import facebook from "../assets/fb_img.svg";
 
 function FooterSection() {
   return (
-    <footer className="footer">
+    <footer className="footer" id="footer">
       <div className="footer_top">
         {/* COL 1 — Brand */}
         <div className="footer_brand">
@@ -31,10 +31,22 @@ function FooterSection() {
           </p>
 
           <div className="footer_socials">
-            <a href="#" className="footer_social_btn" aria-label="Instagram">
+            <a
+              href="https://www.instagram.com/annambites"
+              className="footer_social_btn"
+              aria-label="Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src={instagram} alt="instagram" />
             </a>
-            <a href="#" className="footer_social_btn" aria-label="Facebook">
+            <a
+              href="https://www.facebook.com/annambites"
+              className="footer_social_btn"
+              aria-label="Facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src={facebook} alt="facebook" />
             </a>
           </div>
@@ -92,19 +104,20 @@ function FooterSection() {
           <h4 className="footer_col_title">Quick Links</h4>
           <ul className="footer_links">
             <li>
-              <a href="#">All Snacks</a>
+              <a href="#product-order">All Snacks</a>
             </li>
             <li>
-              <a href="#">Our Process</a>
+              <a href="#about">Our Story</a>
             </li>
             <li>
-              <a href="#">Shipping Policy</a>
+              <a href="#process">Our Process</a>
+            </li>
+
+            <li>
+              <a href="#footer">Contact Us</a>
             </li>
             <li>
-              <a href="#">Contact Us</a>
-            </li>
-            <li>
-              <a href="#">Our Story</a>
+              <a href="#footer">Shipping Policy</a>
             </li>
           </ul>
         </div>
@@ -141,48 +154,52 @@ function FooterSection() {
                 Tamil Nadu
               </span>
             </li>
-            <li>
-              <span className="footer_contact_icon">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498
+            <a href="tel:+919876543210">
+              <li>
+                <span className="footer_contact_icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498
                     4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042
                     0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493
                     1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716
                     21 3 14.284 3 6V5z"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    stroke="#F5A623"
-                  />
-                </svg>
-              </span>
-              <span>+91 98765 43210</span>
-            </li>
-            <li>
-              <span className="footer_contact_icon">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      stroke="#F5A623"
+                    />
+                  </svg>
+                </span>
+                <span>+91 98765 43210</span>
+              </li>
+            </a>
+            <a href="mailto:hello@annambites.com">
+              <li>
+                <span className="footer_contact_icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5
                     19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0
                     00-2 2v10a2 2 0 002 2z"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    stroke="#F5A623"
-                  />
-                </svg>
-              </span>
-              <span>hello@annambites.com</span>
-            </li>
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      stroke="#F5A623"
+                    />
+                  </svg>
+                </span>
+                <span>hello@annambites.com</span>
+              </li>
+            </a>
           </ul>
         </div>
 
